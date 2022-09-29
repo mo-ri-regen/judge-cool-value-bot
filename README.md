@@ -24,6 +24,10 @@ docker-compose run --entrypoint "poetry install" judge-cool-value-bot
 docker-compose run --entrypoint "poetry add discord.py" judge-cool-value-bot
 ```
 
+```bash
+docker-compose run --entrypoint "poetry add python-dotenv" judge-cool-value-bot
+```
+
 新しい Python パッケージを追加した場合は下記コマンドで再ビルドをします
 
 ```bash
