@@ -2,6 +2,7 @@ import discord
 import random
 
 import os
+from dotenv import load_dotenv
 
 # 接続に必要なオブジェクトを生成
 
@@ -44,5 +45,7 @@ async def on_message(message):
             else:
                 text += "★★★★★"
                 await message.channel.send(text)
+
+load_dotenv()
 
 client.run(os.environ['TOKEN'])
