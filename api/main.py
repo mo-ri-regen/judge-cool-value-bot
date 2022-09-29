@@ -28,24 +28,21 @@ async def on_message(message):
         
         if message.content.startswith('/cool'):      
             if cool_value == 0:
-                text += "☆☆☆☆☆"
-                await message.channel.send(text)
+                text += "☆☆☆☆☆\n"
             elif cool_value == 1:
-                text += "★☆☆☆☆"
-                await message.channel.send(text)
+                text += "★☆☆☆☆\n"
             elif cool_value == 2:
-                text += "★★☆☆☆"
-                await message.channel.send("★★☆☆☆")
+                text += "★★☆☆☆\n"
             elif cool_value == 3:
-                text += "★★★☆☆"
-                await message.channel.send("★★★☆☆")
+                text += "★★★☆☆\n"
             elif cool_value == 4:
-                text += "★★★★☆"
-                await message.channel.send("★★★★☆")                                
+                text += "★★★★☆\n"
             else:
-                text += "★★★★★"
-                await message.channel.send(text)
+                text += "★★★★★\n"
 
+        text += "それでは今日もcoolな一日を！"
+        await message.channel.send(text)
+        
 load_dotenv()
 
 client.run(os.environ['TOKEN'])
