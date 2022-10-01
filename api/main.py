@@ -24,7 +24,7 @@ async def on_message(message):
     if message.content == '/cool':
         cool_value = random.randrange(6)
         
-        text = "あなたのクール度は"
+        text = f"{message.author.name}さんのクール度は"
         
         if message.content.startswith('/cool'):      
             if cool_value == 0:
