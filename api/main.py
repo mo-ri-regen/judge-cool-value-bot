@@ -17,8 +17,12 @@ async def on_ready():
 # メッセージ受信時に動作する処理
 @client.event
 async def on_message(message):
-# メッセージ送信者がBotだった場合は無視する
+    # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
+        return
+
+    # 指定のチャンネルのみコマンド実行できるようにする
+    if message.channel.id != int(os.environ["CHANNEL_ID"]):
         return
 
     if message.content == '/cool':
@@ -41,6 +45,7 @@ async def on_message(message):
                 text += "★★★★★\n"
 
         text += "それでは今日もcoolな一日を！"
+                
         await message.channel.send(text)
         
 load_dotenv()
