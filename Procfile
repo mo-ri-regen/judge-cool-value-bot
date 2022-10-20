@@ -1,1 +1,1 @@
-web: poetry run python3 api/main.py
+web: poetry run python3 api.main
