@@ -48,7 +48,7 @@ docker-compose build --no-cache
 ### 実行
 
 ```bash
-docker-compose run --entrypoint "poetry run python3 api/main.py" judge-cool-value-bot
+docker-compose run --entrypoint "poetry run python3 bot/main.py" judge-cool-value-bot
 ```
 
 ## Heroku
