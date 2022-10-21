@@ -1,3 +1,14 @@
+## 準備
+
+https://discord.com/developers
+にアクセスする
+
+OAuth2 > URL Generator で bot にチェック
+→GENERATED URL に記載の URL にアクセス
+→Discord のアクセスを許可する
+
+Bot > Privileged Gateway Intents の権限をオンにする
+
 ## セットアップ
 
 ### Docker イメージの作成
@@ -39,3 +50,21 @@ docker-compose build --no-cache
 ```bash
 docker-compose run --entrypoint "poetry run python3 api/main.py" judge-cool-value-bot
 ```
+
+## Heroku
+
+heroku で poetry を利用する場合、requirements.txt と Procfile が必要
+requirements.txt:サーバに何のパッケージがインストールされている必要があるかを Heroku に教えるためのファイル
+下記コマンドで requirements.txt が生成される
+
+```bash
+docker-compose run --entrypoint "poetry export -f requirements.txt -o requirements.txt" judge-cool-value-bot
+```
+
+https://minerva.mamansoft.net/Notes/Poetry%E3%81%A7requirements.txt%E3%82%92%E4%BD%9C%E6%88%90
+
+### Procfile
+
+Heroku にデプロイしたときに自動的に実行されるコマンドを記述
+
+https://devcenter.heroku.com/ja/articles/release-phase
