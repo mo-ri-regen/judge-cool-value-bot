@@ -1,1 +1,1 @@
-release: python3 bot/main.py
+discordbot: python3 bot/main.py
