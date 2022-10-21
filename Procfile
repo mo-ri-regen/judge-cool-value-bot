@@ -1,1 +1,1 @@
-release: poetry run python3 api/main.py
+release: python3 api/main.py
