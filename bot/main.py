@@ -24,7 +24,13 @@ async def on_message(message):
     # 指定のチャンネルのみコマンド実行できるようにする
     if message.channel.id != int(os.environ["CHANNEL_ID"]):
         return
-
+    
+    # 強制終了する
+    if message.content == '/logout':
+        print("ログアウトしました")
+        await client.close()
+        return
+        
     if message.content == '/cool':
         cool_value = random.randrange(6)
         
