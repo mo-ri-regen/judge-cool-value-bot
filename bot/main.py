@@ -30,19 +30,18 @@ async def on_message(message):
         
         text = f"{message.author.name}さんのクール度は"
         
-        if message.content.startswith('/cool'):      
-            if cool_value == 0:
-                text += "☆☆☆☆☆\n"
-            elif cool_value == 1:
-                text += "★☆☆☆☆\n"
-            elif cool_value == 2:
-                text += "★★☆☆☆\n"
-            elif cool_value == 3:
-                text += "★★★☆☆\n"
-            elif cool_value == 4:
-                text += "★★★★☆\n"
-            else:
-                text += "★★★★★\n"
+        if cool_value == 0:
+            text += "☆☆☆☆☆\n"
+        elif cool_value == 1:
+            text += "★☆☆☆☆\n"
+        elif cool_value == 2:
+            text += "★★☆☆☆\n"
+        elif cool_value == 3:
+            text += "★★★☆☆\n"
+        elif cool_value == 4:
+            text += "★★★★☆\n"
+        else:
+            text += "★★★★★\n"
 
         text += "それでは今日もcoolな一日を！"
                 
