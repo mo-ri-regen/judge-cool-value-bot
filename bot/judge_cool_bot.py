@@ -1,4 +1,7 @@
+import random
 
+def generate_random_number():
+    return random.randrange(6)    
 
 def create_text(name, cool_value):
 

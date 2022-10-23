@@ -1,5 +1,4 @@
 import discord
-import random
 
 import os
 from dotenv import load_dotenv
@@ -33,7 +32,7 @@ async def on_message(message):
         return
         
     if message.content == '/cool':
-        cool_value = random.randrange(6)
+        cool_value = judge_cool_bot.generate_random_number()
  
         text = judge_cool_bot.create_text(message.author.name, cool_value)
                 
