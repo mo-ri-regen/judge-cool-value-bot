@@ -20,6 +20,6 @@ def create_text(name, cool_value):
         else:
             text += "★★★★★\n"
         
-        text += "それでは今日もcoolな一日を！"
+        text += "それでは今日もCoolな1日を🆒"
         
         return text
