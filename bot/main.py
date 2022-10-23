@@ -4,6 +4,7 @@ import random
 import os
 from dotenv import load_dotenv
 
+import judge_cool_bot
 # 接続に必要なオブジェクトを生成
 
 client = discord.Client(intents=discord.Intents.all())
@@ -33,26 +34,11 @@ async def on_message(message):
         
     if message.content == '/cool':
         cool_value = random.randrange(6)
-        
-        text = f"{message.author.name}さんのクール度は"
-        
-        if cool_value == 0:
-            text += "☆☆☆☆☆\n"
-        elif cool_value == 1:
-            text += "★☆☆☆☆\n"
-        elif cool_value == 2:
-            text += "★★☆☆☆\n"
-        elif cool_value == 3:
-            text += "★★★☆☆\n"
-        elif cool_value == 4:
-            text += "★★★★☆\n"
-        else:
-            text += "★★★★★\n"
-
-        text += "それでは今日もcoolな一日を！"
+ 
+        text = judge_cool_bot.create_text(message.author.name, cool_value)
                 
         await message.channel.send(text)
-        
+
 load_dotenv()
 
 client.run(os.environ['TOKEN'])
