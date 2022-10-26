@@ -36,7 +36,8 @@ async def on_message(message):
  
         text = judge_cool_bot.create_text(message.author.name, cool_value)
                 
-        await message.channel.send(text)
+        embed = discord.Embed(title="クール度判定",description=text)
+        await message.channel.send(embed=embed)
 
 load_dotenv()
 
