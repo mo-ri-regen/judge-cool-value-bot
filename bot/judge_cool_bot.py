@@ -1,7 +1,7 @@
 import random
 
 def generate_random_number():
-    return random.randrange(6)    
+    return random.randrange(6)
 
 def create_text(name, cool_value):
 
@@ -20,6 +20,9 @@ def create_text(name, cool_value):
         else:
             text += "★★★★★\n"
         
-        text += "それでは今日もCoolな1日を🆒"
+        if cool_value == 0:
+            text += "それでは、きょうは情熱的な1日を🔥"
+        else:
+            text += "それでは、きょうもCoolな1日を🆒"
         
         return text
