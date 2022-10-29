@@ -25,15 +25,7 @@ async def on_message(message):
     # 指定のチャンネルのみコマンド実行できるようにする
     if message.channel.id != int(os.environ["CHANNEL_ID"]):
         return
-    
-    if not bot_time.is_bot_time():
-
-        text = judge_cool_bot.create_non_bot_time_text()
-        embed = discord.Embed(title="クール度判定",description=text, color=0x87CEEB)
-        await message.channel.send(embed=embed)
         
-        return
-    
     # 強制終了する
     if message.content == '/logout':
         print("ログアウトしました")
@@ -41,7 +33,15 @@ async def on_message(message):
         return
         
     if message.content == '/cool':
-        
+    
+        if not bot_time.is_bot_time():
+
+            text = judge_cool_bot.create_non_bot_time_text()
+            embed = discord.Embed(title="クール度判定",description=text, color=0x87CEEB)
+            await message.channel.send(embed=embed)
+            
+            return
+            
         cool_value = judge_cool_bot.generate_random_number()
  
         text = judge_cool_bot.create_text(message.author.name, cool_value)
